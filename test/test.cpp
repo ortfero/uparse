@@ -30,4 +30,11 @@ TEST_SUITE("uparse") {
         auto const target = uparse::parse<double>("X");
         REQUIRE(!target);
     }
+	
+	
+	SCENARIO("Parsing nullptr") {
+		char const* nul = nullptr;
+		auto const target = uparse::parse<int>(nul);
+		REQUIRE(!target);
+	}
 }
