@@ -39,46 +39,55 @@ namespace uparse {
 	template<typename T> std::optional<T> parse(char const*) noexcept = delete;
     
     
-    template<> std::optional<std::int32_t> parse(std::string_view s) noexcept {
+    template<> inline std::optional<std::int32_t>
+    parse(std::string_view s) noexcept {
         return detail::parse_number<std::int32_t>(s);
     }
 	
 	
-	template<> std::optional<std::int32_t> parse(char const* s) noexcept {
+	template<> inline std::optional<std::int32_t>
+    parse(char const* s) noexcept {
         return detail::parse_number<std::int32_t>(s);
     }
     
     
-    template<> std::optional<std::uint32_t> parse(std::string_view s) noexcept {
+    template<> inline std::optional<std::uint32_t>
+    parse(std::string_view s) noexcept {
         return detail::parse_number<std::uint32_t>(s);
     }
 	
 	
-	template<> std::optional<std::uint32_t> parse(char const* s) noexcept {
+	template<> inline std::optional<std::uint32_t>
+    parse(char const* s) noexcept {
         return detail::parse_number<std::uint32_t>(s);
     }
     
     
-    template<> std::optional<std::int64_t> parse(std::string_view s) noexcept {
+    template<> inline std::optional<std::int64_t>
+    parse(std::string_view s) noexcept {
         return detail::parse_number<std::int64_t>(s);
     }
 	
-	template<> std::optional<std::int64_t> parse(char const* s) noexcept {
+	template<> inline std::optional<std::int64_t>
+    parse(char const* s) noexcept {
         return detail::parse_number<std::int64_t>(s);
     }
     
     
-    template<> std::optional<std::uint64_t> parse(std::string_view s) noexcept {
+    template<> inline std::optional<std::uint64_t>
+    parse(std::string_view s) noexcept {
         return detail::parse_number<std::uint64_t>(s);
     }
 	
 	
-	template<> std::optional<std::uint64_t> parse(char const* s) noexcept {
+	template<> inline std::optional<std::uint64_t>
+    parse(char const* s) noexcept {
         return detail::parse_number<std::uint64_t>(s);
     }
     
     
-    template<> std::optional<double> parse(std::string_view s) noexcept {
+    template<> inline std::optional<double>
+    parse(std::string_view s) noexcept {
 #ifdef _MSC_VER
         return detail::parse_number<double>(s);
 #else
@@ -91,7 +100,8 @@ namespace uparse {
     }
 	
 	
-	template<> std::optional<double> parse(char const* s) noexcept {
+	template<> inline std::optional<double>
+    parse(char const* s) noexcept {
 #ifdef _MSC_VER
         return detail::parse_number<double>(s);
 #else
